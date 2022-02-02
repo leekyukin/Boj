@@ -1,0 +1,4 @@
+# xcode project 파일 무시
+*.xcodeproj
+# .DS_Store 파일 무시
+*.DS_Store
