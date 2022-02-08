@@ -7,26 +7,28 @@
 
 #include <stdio.h>
 
+
+
 int main(void) {
-    int n, alpha[26];
+    int n;
     scanf("%d", &n);
+    int cnt = n;
     for(int i = 0; i < n; i++) {
-        char str[100], tmp[100] = {};
+        char str[100];
         scanf("%s", str);
-        
-       // int k = 0;
+        int alpha[26] = {0};
+
         for(int j = 0; str[j] != '\0'; j++) {
             if (str[j] != str[j + 1])
-                //tmp[k++] = str[j];
                 alpha[str[j] - 97]++;
         }
         
-        for(int i = 0; i < 26; i++) {
-            if(alpha[i] > 1) n--;
+        for(int j = 0; j < 26; j++) {
+            if (alpha[j] > 1) {
+                cnt--;
+                break;
+            }
         }
-        
-        if (n < 0) n = 0;
-        
-        printf("%d", n);
     }
+    printf("%d", cnt);
 }
